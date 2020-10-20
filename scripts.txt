@@ -1,0 +1,9 @@
+CUDA_VISIBLE_DEVICES=0 python rsgan.py --dataset cifar --batch_size 64 --num_features 64 --g_lr 5e-4 --d_lr 2e-4  &
+
+CUDA_VISIBLE_DEVICES=0 python rsgan.py --dataset cifar --batch_size 64 --num_features 256 --g_lr 1.5e-3 --d_lr 2e-4 --beta1 0 --beta2 0.9 --d_freq 5 --g_freq 1 --structure resnet --losstype log  &
+
+CUDA_VISIBLE_DEVICES=0 python rsgan.py --dataset stl --image_size 48 --num_features 64 --beta1 0.5 --beta2 0.999 --batch_size 64 --g_lr 5e-4 --d_lr 2e-4 --losstype log  &
+
+CUDA_VISIBLE_DEVICES=0 python rsgan.py --dataset stl --batch_size 64 --num_features 64 --image_size 48 --g_lr 1e-3 --d_lr 2e-4 --beta1 0.5 --beta2 0.999 --d_freq 5 --g_freq 1 --structure resnet --losstype log  &
+
+CUDA_VISIBLE_DEVICES=0 python rsgan.py --dataset tower --image_size 256 --batch_size 64 --num_features 32 --g_lr 1e-3 &
