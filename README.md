@@ -22,7 +22,7 @@ There are three main parts of experiments:
 
 We provide three evaluation metrics in `eval.py`: FID, Inception Score and Precision and Recall for Distributions.
 
-e.g. to evalute regular CNN model on CIFAR-10, do
+e.g. to evaluate the regular CNN model on CIFAR-10, do
 
 ```
 python eval.py --metric FID --dataset cifar --structure dcgan --image_size 32 --num_features 64 --model_path [the/model/path]
