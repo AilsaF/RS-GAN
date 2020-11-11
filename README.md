@@ -40,9 +40,11 @@ We include pretrained models in the folder `pretrained-model`.
 
 Please cite our work if you find it useful for your research and work:
 
+```
 @ARTICLE{sun2020ganlandscape,
-       author = {{Sun}, Ruoyu and {Fang}, Tiantian and {Schwing}, Alex},
-        title = "{Towards a Better Global Loss Landscape of GANs}",
-        booktitle = {Conference on Neural Information Processing Systems},
-        year = 2020
+         author = {Ruoyu Sun and Tiantian Fang and Alex Schwing},
+         title = "{Towards a Better Global Loss Landscape of GANs}",
+         booktitle = {Conference on Neural Information Processing Systems},
+         year = 2020,
 }
+```
