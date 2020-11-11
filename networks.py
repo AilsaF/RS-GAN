@@ -250,7 +250,7 @@ class SNResNetProjectionDiscriminator48(nn.Module):
         h = x
         for i in range(1, 6):
             h = getattr(self, 'block{}'.format(i))(h)
-        h = F.relu(h)
+        h = self.activation(h)
         # Global pooling
         h = h.sum(dim=(2, 3))
         output = self.proj(h)
