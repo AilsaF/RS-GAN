@@ -2,11 +2,9 @@
 
 This repository contains the code of the following paper:
 
-> **On Understanding the Global Landscape of Generative Adversarial Nets**<br>
->
-> https://arxiv.org/abs/2011.04926
->
-> **Abstract:** Understanding of GAN training is still very limited. One major challenge is the non-convex-non-concave min-max objective in GAN training, which may lead to sub-optimal local minima. In this work, we perform a global landscape analysis of GANs using the empirical version. We prove that the original GAN formulation has exponentially many bad basins which are perceived as mode-collapse. We also study a modification to the original loss called RS-GAN (relative standard GAN) which couples the generated samples and the true samples, and prove that RS-GAN has no bad basins. Experiments on the synthetic data show that the predicted bad basin can indeed appear in training. We also perform a few experiments to support our theory that RS-GAN has a better landscape than JS-GAN. For instance, we empirically show that RS-GAN performs better than JS-GAN with relatively narrow neural nets.
+**Towards a Better Global Loss Landscape of GANs** https://arxiv.org/abs/2011.04926
+
+**Abstract:** Understanding of GAN training is still very limited. One major challenge is its non-convex-non-concave min-max objective, which may lead to sub-optimal local minima. In this work, we perform a global landscape analysis of the empirical loss of GANs. We prove that a class of separable-GAN, including the original JS-GAN, has exponentially many bad basins which are perceived as mode-collapse. We also study the relativistic pairing GAN (RpGAN) loss which couples the generated samples and the true samples. We prove that RpGAN has no bad basins. Experiments on synthetic data show that the predicted bad basin can indeed appear in training. We also perform experiments to support our theory that RpGAN has a better landscape than separable-GAN. For instance, we empirically show that RpGAN performs better than separable-GAN with relatively narrow neural nets.
 
 ## Training
 
@@ -48,4 +46,3 @@ Please cite our work if you find it useful for your research and work:
         booktitle = {Conference on Neural Information Processing Systems},
         year = 2020
 }
-
