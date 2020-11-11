@@ -100,10 +100,7 @@ def train():
             x_hat = netG(z)
             y_hat = netD(x_hat)
             y = netD(x)
-            if args.losstype == 'HH':
-                g_loss = get_gloss('hinge', y_hat, y)
-            else:
-                g_loss = get_gloss('log', y_hat, y)
+            g_loss = get_gloss(args.losstype, y_hat, y)
             g_losses.append(g_loss.item())
             g_loss.backward()
             g_optimizer.step()
@@ -124,10 +121,7 @@ def train():
             x_hat = netG(z).detach()
             y_hat = netD(x_hat)
             y = netD(x)
-            if args.losstype == 'log':
-                d_loss = get_dloss('log', y_hat, y)
-            else:
-                d_loss = get_dloss('hinge', y_hat, y)
+            d_loss = get_dloss(args.losstype, y_hat, y)
             d_losses.append(d_loss.item())
             d_loss.backward()
             d_optimizer.step()
@@ -157,7 +151,7 @@ if __name__=='__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--dataset', type=str, default='cifar', choices=['cifar', 'stl', 'tower', 'church_outdoor'])
     parser.add_argument('--structure', type=str, default='dcgan', choices=['resnet', 'dcgan'])
-    parser.add_argument('--losstype', type=str, default='log', choices=['log', 'HH', 'HL'])
+    parser.add_argument('--losstype', type=str, default='log', choices=['log', 'hinge'])
     parser.add_argument('--batch_size', type=int, default=64)
     parser.add_argument('--image_size', type=int, default=32)
     parser.add_argument('--input_dim', type=int, default=128)
