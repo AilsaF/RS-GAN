@@ -103,7 +103,7 @@ def train():
     d_losses = []
     grad_normD, grad_normG = [], []
 
-    loader = datasets.toy_DataLoder(n=data_num/gaussian_num, batch_size=batch_size, gaussian_num=gaussian_num)
+    loader = datasets.toy_DataLoder(n=data_num//gaussian_num, batch_size=batch_size, gaussian_num=gaussian_num)
     data_iter = iter(loader)
 
     for i in range(1, num_iters + 1):
