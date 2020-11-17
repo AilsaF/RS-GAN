@@ -22,7 +22,7 @@ def getSavePath():
 
     dir_name = dir_name + 'RSGAN_{}_dlr{}_glr{}_diter{}_giter{}_b1{}_b2{}_featureNum{}_bottleneck{}_batchsize{}'.format(
         args.dataset.upper(), args.d_lr, args.g_lr, args.d_freq, args.g_freq, args.beta1, args.beta2, 
-        args.num_features,, args.bottleneck, args.batch_size)
+        args.num_features, args.bottleneck, args.batch_size)
 
     dir_name += '_ematrick' if args.ema_trick else ''
     dir_name += 'seed{}/'.format(args.seed)
