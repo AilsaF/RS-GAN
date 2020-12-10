@@ -30,7 +30,7 @@ def toy_DataLoder(n=100, batch_size=100, gaussian_num=5, shuffle=True):
         for x in range(-2, 3, 1):
             for y in range(-2, 3, 1):
                 samples = np.vstack((samples, sample_data([x, y], n).astype(np.float)))
-    permutation = range(gaussian_num * n)
+    permutation = np.arange(gaussian_num * n)
     np.random.shuffle(permutation)
     samples = samples[permutation]
     data = TensorDataset(torch.from_numpy(samples))
